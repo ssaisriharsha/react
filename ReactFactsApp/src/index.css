@@ -1,0 +1,69 @@
+body {
+    background-color:rgb(11 23 52);
+    color: white;
+    margin:0;
+    
+}
+
+.navbar {
+    padding: 15px;
+    margin: 0px;
+    /* display: flex;
+    align-items: center;
+    gap: 5px; */
+    background-color:rgb(23, 30, 47);
+    box-shadow: 0px 5px 10px 0px rgb(14 54 151);
+    flex-wrap: wrap;
+    /* border-radius: 10px; */
+}
+
+.navbar > a {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: rgb(23, 30, 47);
+}
+
+.navbar >a:visited {
+    color: rgb(23, 30, 47);
+}
+
+main > h1 {
+    padding-left: 15px;
+}
+
+.fact-list {
+    padding-left: 56px;
+    max-width: 400px;
+    list-style: none;
+}
+
+.fact-list > li {
+    /* position: relative; */
+    line-height: 1.7;
+}
+
+.react-logo {
+    width: 55px;
+}
+
+.logo-text {
+    color: #00D8FF;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.fact-list > li::before {
+    content: "●";
+    margin-right: 10px;
+    color: aqua;
+    font-size: 1.3rem;
+}
+
+main {
+    background-image: url("/src/assets/react-logo-half.png");
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: contain;
+}
+
