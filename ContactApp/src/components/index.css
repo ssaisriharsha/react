@@ -1,0 +1,44 @@
+body {
+    background-color: antiquewhite;
+    margin: 0;
+}
+
+.contact-container {
+    padding: 16px;
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.contact {
+    background-color:white;
+    flex-grow: 0;
+    flex-shrink: 0;
+    width: fit-content;
+    border-radius: 10px;
+    padding: 16px;
+    transition: transform 250ms;
+    cursor: pointer;
+}
+
+.contact > h2 {
+    margin: 8px 0px;
+    /* margin-top: 0; */
+}
+
+.contact > div {
+    margin: 16px 0px;
+    display: flex;
+    gap: 16px;
+}
+
+.profile-pic {
+    /* margin: 16px; */
+    width: 250px;
+    border-radius: 10px;
+}
+
+.contact:hover {
+    transform:scale(1.05);
+}
