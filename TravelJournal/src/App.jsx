@@ -5,7 +5,9 @@ export default function App() {
     return (
         <>
             <Header />
-            <Entry />
+            <Entry country="JAPAN" />
+            {/* <Entry />
+            <Entry /> */}
         </>
     );
 }

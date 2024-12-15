@@ -1,21 +1,31 @@
-export default function Entry() {
-    const time = `${new Date().getHours()}:${new Date().getMinutes()}:${new Date().getSeconds()}`;
+import jokesData from "/jokesData.js"
+
+export default function Entry(props) {
+    // const testArr=[1, 2, 3, 4, 5, 6, 7];
+    console.log(jokesData[0].punchline)
     return (
         <main>
-            <article className="japan">
+
+            {/* <article className="japan">
                 <div className="place-image-container">
-                    <img className="place-image" src="https://scrimba.com/links/travel-journal-japan-image-url" alt="japan" />
+                    <img className="place-image" src={props.imgLink} alt={props.country} />
                 </div>
                 <div className="entry-text-container">
                     <img src="/src/assets/marker.png" className="marker" alt="marker" />
-                    <span className="place">JAPAN</span>
+                    <span className="place">{props.country}</span>
                     <a href="https://maps.google.com">View on google maps</a>
-                    <h2>Mount Fuji</h2>
-                    <span><b>12 jan 2021 - 24 jan 2021 {time}</b></span>
-                    <p>Mount fuji is the tallest mountain in japan, standing at 3776ft. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aperiam harum fugiat blanditiis nam non nemo, quasi repudiandae numquam recusandae qui saepe asperiores tenetur, aut quas. Libero ad minus molestiae magnam!</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, reiciendis! Nihil ducimus ratione praesentium rem culpa, voluptates alias possimus tenetur ab voluptatibus architecto laborum libero aspernatur. Nulla vel necessitatibus laborum.</p>
+                    <h2>{props.place}</h2>
+                    <span><b>{props.interval}</b></span>
+                    <p>{props.desc}</p>
                 </div>
-            </article>
+                <h1>{testArr[0]}</h1>
+                <h1>{testArr[1]}</h1>
+                <h1>{testArr[2]}</h1>
+                <h1>{testArr[3]}</h1>
+                <h1>{testArr[4]}</h1>
+                <h1>{testArr[5]}</h1>
+            </article> */}
         </main>
     );
 }
+
