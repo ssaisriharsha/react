@@ -1,10 +1,16 @@
 import PropTypes from "prop-types"
+import { useState } from "react"
 
 export default function Joke(props) {
+    const [isShown, setIsShown] = useState(false);
+    const handleClick = ()=>{
+        setIsShown(prevState=>!prevState);
+    }
     return (
         <>
             {props.setup&&<p>Setup: {props.setup}</p>}
-            {props.punchline&&<p>Punchline: {props.punchline}</p>}
+            {isShown&&<p>Punchline: {props.punchline}</p>}
+            <button onClick={handleClick}>{isShown?"Hide Punchline":"Show Punchline"}</button>
             <hr />
         </>
     );
