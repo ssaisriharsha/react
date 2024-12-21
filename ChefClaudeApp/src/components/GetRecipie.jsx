@@ -1,8 +1,10 @@
 import PropTypes from "prop-types"
+import { gAPICall } from "./gAPICall";
 
 export default function GetRecipie(props) {
-    const getRecipie = () => {
-        props.setRecipieShown(prevVal=>!prevVal);
+    const getRecipie = async() => {
+        props.setRecipieDetails("");
+        props.setRecipieDetails(await gAPICall(props.ingredients));
     }
     return(
         <>
@@ -20,5 +22,7 @@ export default function GetRecipie(props) {
 }
 
 GetRecipie.propTypes = {
-    setRecipieShown: PropTypes.func.isRequired
+    ingredients: PropTypes.string.isRequired,
+    recipieDetails: PropTypes.string,
+    setRecipieDetails: PropTypes.func.isRequired
 }

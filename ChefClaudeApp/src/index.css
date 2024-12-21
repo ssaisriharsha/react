@@ -19,7 +19,7 @@ header {
     margin: 10px auto;
     /* margin-top: 10px; */
     border-radius: 10px;
-    transition: transform 250ms ease-in-out;
+    /* transition: transform 250ms ease-in-out; */
 }
 
 header > img {
@@ -31,9 +31,9 @@ header > h1 {
     font-weight: 400;
 }
 
-header:hover {
+/* header:hover {
     transform:scale(1.02);
-}
+} */
 
 main {
     padding: 8px;
@@ -42,12 +42,12 @@ main {
     box-shadow: 0px 3px 9px 0px rgb(222 227 214);
     border-radius: 10px;
     background-color: white;
-    transition: transform 250ms ease-in-out;
+    /* transition: transform 250ms ease-in-out; */
 }
 
-main:hover {
+/* main:hover {
     transform:scale(1.02);
-}
+} */
 
 .input-container > form {
     display: flex;
@@ -131,4 +131,21 @@ main:hover {
 .recipie-getter-card span {
     display:block;
     margin-bottom: 15px;
+}
+
+.reset {
+    background-color: red;
+    color: white;
+    font-weight: 700;
+    height: 35px;
+    border: none;
+    width: 85px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.button-container {
+    padding: 15px;
+    display: flex;
+    justify-content: center;
 }

@@ -2,16 +2,19 @@ import { useState } from "react";
 import IngredientList from "./IngredientList";
 import GetRecipie from "./GetRecipie";
 import RecipieDetails from "./RecipieDetails";
-
 export default function Form() {
 
     function isBlank(str) {
         return !str || /^\s*$/.test(str);
     }
-    const [recipieShown, setRecipieShown] = useState(false);
     const [ingredients, setIngredients] = useState([]);
+    const [recipieDetails, setRecipieDetails] = useState("");
     const addIngredient = function(formData) {
         !isBlank(formData.get("ingredient"))?setIngredients((prevArray)=>[...prevArray, formData.get("ingredient")]):null;
+    }
+    const reset = () => {
+        setRecipieDetails("");
+        setIngredients([]);
     }
     return(
             <>
@@ -23,9 +26,15 @@ export default function Form() {
                     <div className="text-container">
                         {ingredients.length!=0?<IngredientList ingredients={ingredients.map(x=><li key={x} className="ingredient">{x}</li>)} />:null}
                     </div>
-                    {ingredients.length>=3?<GetRecipie setRecipieShown={setRecipieShown} />:null}
-                    {recipieShown?<RecipieDetails />:null}
+                    {ingredients.length>=3?<GetRecipie ingredients={ingredients} recipieDetails={recipieDetails} setRecipieDetails={setRecipieDetails} />:null}
+                    {recipieDetails!=""?<RecipieDetails recipieDetails={recipieDetails}/>:null}
+                    {recipieDetails!=""&&ingredients!=[]?
+                    (<div className="button-container">
+                        <button onClick={reset} className="reset">Reset</button>
+                    </div>)
+                    :null}
                 </div>
             </>
     )
 }
+
