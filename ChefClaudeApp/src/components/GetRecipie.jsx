@@ -8,7 +8,7 @@ export default function GetRecipie(props) {
     }
     return(
         <>
-            <div className="recipie-getter-card">
+            <div className="recipie-getter-card" ref={props.ref}>
                 <div className="recipie-text-container">
                     <h3>Ready for a recipie?</h3>
                     <span>Generate a recipie from your list of ingredients.</span>
