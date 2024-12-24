@@ -53,12 +53,14 @@ export default function GameCard() {
 				};
 			})
 		);
+        setTurn(0);
 	}
 
 	const rollDice = () => {
 		setDieValueArray((oldDieValueArray) =>
 			modifyRandomArrayObject(oldDieValueArray)
 		);
+        setTurn(prevTurn=>prevTurn+1);
 	};
 	const hold = (id) => {
 		!gameWon()
@@ -73,6 +75,7 @@ export default function GameCard() {
 	const [dieValueArray, setDieValueArray] = useState(() =>
 		generateRandomArrayObject()
 	);
+    const [turn, setTurn] = useState(0);
 	let dieComponents = dieValueArray.map((x) => (
 		<Die
 			key={x.id}
@@ -90,6 +93,7 @@ export default function GameCard() {
 				Roll until all dice are the same. Click each die to freeze at
 				its current value between rolls.
 			</p>
+            <div className="turn"><b>Turn: {turn}</b></div>
 			<div className="dice-container">{dieComponents}</div>
 			{!gameWon() ? (
 				<div className="btn-container">
